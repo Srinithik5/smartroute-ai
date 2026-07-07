@@ -1,0 +1,20 @@
+{
+  "name": "smartroute-ai",
+  "private": true,
+  "version": "0.1.0",
+  "description": "SmartRoute AI — AI-powered logistics & route optimization platform",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev:client": "npm run dev --workspace client",
+    "dev:server": "npm run dev --workspace server",
+    "build:client": "npm run build --workspace client",
+    "build:server": "npm run build --workspace server",
+    "lint:client": "npm run lint --workspace client"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
