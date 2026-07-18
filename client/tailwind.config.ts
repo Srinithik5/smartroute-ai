@@ -31,6 +31,12 @@ export default {
           'dot-inactive': '#8a8fc0',
           grid: '#0a0a94',
         },
+        // Semantic status colors (form validation / password strength / alerts only —
+        // never used for brand, nav, or primary actions). 'success' reuses the exact
+        // green already present in the prototype's dashboard trend text (#1a8f5c).
+        danger: '#d64545',
+        warning: '#e0a53e',
+        success: '#1a8f5c',
       },
       fontFamily: {
         sans: [

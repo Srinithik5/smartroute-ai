@@ -2,7 +2,10 @@ import { Routes, Route } from 'react-router-dom';
 import { ROUTES } from '@/constants/routes';
 
 import { LandingPage } from '@/pages/LandingPage';
-import { AuthPage } from '@/pages/AuthPage';
+import { LoginPage } from '@/pages/auth/LoginPage';
+import { RegisterPage } from '@/pages/auth/RegisterPage';
+import { ForgotPasswordPage } from '@/pages/auth/ForgotPasswordPage';
+import { ResetPasswordPage } from '@/pages/auth/ResetPasswordPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
 
 import { DispatcherAppLayout } from '@/layouts/DispatcherAppLayout';
@@ -36,8 +39,10 @@ export function AppRoutes() {
   return (
     <Routes>
       <Route path={ROUTES.landing} element={<LandingPage />} />
-      <Route path={ROUTES.login} element={<AuthPage />} />
-      <Route path={ROUTES.register} element={<AuthPage />} />
+      <Route path={ROUTES.login} element={<LoginPage />} />
+      <Route path={ROUTES.register} element={<RegisterPage />} />
+      <Route path={ROUTES.forgotPassword} element={<ForgotPasswordPage />} />
+      <Route path={ROUTES.resetPassword} element={<ResetPasswordPage />} />
 
       <Route path={ROUTES.app.root} element={<DispatcherAppLayout />}>
         <Route index element={<DashboardPage />} />

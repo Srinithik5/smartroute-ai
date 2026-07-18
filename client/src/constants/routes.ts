@@ -2,6 +2,8 @@ export const ROUTES = {
   landing: '/',
   login: '/login',
   register: '/register',
+  forgotPassword: '/forgot-password',
+  resetPassword: '/reset-password',
 
   app: {
     root: '/app',
