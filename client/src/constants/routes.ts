@@ -1,0 +1,37 @@
+export const ROUTES = {
+  landing: '/',
+  login: '/login',
+  register: '/register',
+
+  app: {
+    root: '/app',
+    dashboard: '/app/dashboard',
+    route: '/app/route',
+    driver: '/app/driver',
+    deliveries: '/app/deliveries',
+    vehicles: '/app/vehicles',
+    warehouse: '/app/warehouse',
+    aiPriorityEngine: '/app/ai-priority-engine',
+    assignmentCenter: '/app/assignment-center',
+    opsCenter: '/app/ops-center',
+    analytics: '/app/analytics',
+    reports: '/app/reports',
+    notifications: '/app/notifications',
+    help: '/app/help',
+    profile: '/app/profile',
+  },
+
+  merchant: {
+    root: '/merchant',
+    dashboard: '/merchant/merchant-dashboard',
+    createDelivery: '/merchant/create-delivery',
+    orders: '/merchant/orders',
+    draftOrders: '/merchant/draft-orders',
+    activeOrders: '/merchant/active-orders',
+    completedOrders: '/merchant/completed-orders',
+    cancelledOrders: '/merchant/cancelled-orders',
+    notifications: '/merchant/notifications',
+    help: '/merchant/help',
+    profile: '/merchant/profile',
+  },
+} as const;

@@ -1,29 +1,40 @@
 import { cn } from '@/utils/cn';
 
 interface LogoProps {
-  /** Pixel size of the mark (square). Defaults to 34. */
   size?: number;
-  /** Show the "SmartRoute AI" wordmark next to the mark. */
-  withLabel?: boolean;
+  variant?: 'onLight' | 'onDark';
+  showLabel?: boolean;
   labelClassName?: string;
+  onClick?: () => void;
   className?: string;
 }
 
-/** Brand mark: navy rounded square with a mint dot, plus optional wordmark. */
-export function Logo({ size = 34, withLabel = true, labelClassName, className }: LogoProps) {
+export function Logo({
+  size = 34,
+  variant = 'onLight',
+  showLabel = true,
+  labelClassName,
+  onClick,
+  className,
+}: LogoProps) {
+  const dotSize = Math.round(size * 0.35);
+  const squareBg = variant === 'onLight' ? 'bg-primary' : 'bg-accent';
+  const dotBg = variant === 'onLight' ? 'bg-accent' : 'bg-primary';
+  const labelColor = variant === 'onLight' ? 'text-primary' : 'text-background';
+
   return (
-    <div className={cn('flex items-center gap-2.5', className)}>
+    <div
+      className={cn('flex items-center gap-2.5', onClick && 'cursor-pointer', className)}
+      onClick={onClick}
+    >
       <div
-        className="flex flex-shrink-0 items-center justify-center rounded-[9px] bg-brand-primary"
+        className={cn('flex flex-shrink-0 items-center justify-center rounded-[9px]', squareBg)}
         style={{ width: size, height: size }}
       >
-        <div
-          className="rounded-full bg-brand-accent"
-          style={{ width: size * 0.35, height: size * 0.35 }}
-        />
+        <div className={cn('rounded-full', dotBg)} style={{ width: dotSize, height: dotSize }} />
       </div>
-      {withLabel && (
-        <span className={cn('whitespace-nowrap font-extrabold tracking-tight text-brand-primary', labelClassName)}>
+      {showLabel && (
+        <span className={cn('whitespace-nowrap font-extrabold tracking-tight', labelColor, labelClassName)}>
           SmartRoute AI
         </span>
       )}
